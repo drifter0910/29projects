@@ -21,7 +21,7 @@ const Project6 = () => {
         <div className={toggle ? "project6__modal" : "project6__modal active"}>
           <i
             onClick={() => setToggle(true)}
-            className="project5__close fas fa-times"
+            className="project6__close fas fa-times"
             style={{
               marginRight: "1rem",
               fontSize: "1.5rem",
