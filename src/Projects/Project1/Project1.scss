@@ -1,0 +1,37 @@
+@import "../../variables";
+.project1 {
+  height: 100vh;
+  h2 {
+    color: $primary-color;
+  }
+  &__navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 30%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    height: 3rem;
+    align-items: center;
+  }
+  &__body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100% - 3rem);
+    text-align: center;
+  }
+  &__navbar-right {
+    display: flex;
+    gap: 0 1rem;
+    cursor: pointer;
+    h3 {
+      &:hover {
+        color: $primary-color;
+      }
+    }
+  }
+  button {
+    font-size: 2rem;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+}

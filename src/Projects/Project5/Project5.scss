@@ -1,0 +1,46 @@
+@import "../../variables";
+.project5 {
+  width: 100vw;
+  height: 100vh;
+  background-color: #f1f5f8;
+
+  &__logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__bars {
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    font-size: 3rem;
+    color: $primary-color;
+  }
+  &__navbar {
+    background-color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 400px;
+    height: 100%;
+    transform: translateX(-1000px);
+    transition: all 1s ease;
+  }
+  &__list {
+    padding: 1rem;
+    font-size: 1.5rem;
+    ul {
+      list-style: none;
+    }
+    li {
+      padding: 1rem 0;
+    }
+  }
+  i {
+    color: red;
+  }
+}
+.project5__navbar.active {
+  transform: translateX(0px);
+  transition: all 1s ease;
+}

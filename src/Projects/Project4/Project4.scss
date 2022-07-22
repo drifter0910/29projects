@@ -1,0 +1,60 @@
+@import "../../variables";
+.project4 {
+  height: 100vh;
+  h2 {
+    color: $primary-color;
+  }
+  &__navbar {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    height: 4.5rem;
+    align-items: center;
+    padding: 0 1rem;
+  }
+  &__ul {
+    ul {
+      display: flex;
+      gap: 0 2rem;
+      list-style: none;
+      margin: 0;
+    }
+  }
+  &__body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100% - 3rem);
+    text-align: center;
+  }
+  &__navbar-right {
+    display: flex;
+    gap: 0 1rem;
+    cursor: pointer;
+    h3 {
+      &:hover {
+        color: $primary-color;
+      }
+    }
+  }
+  button {
+    padding: 1rem;
+    font-size: 2rem;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  li {
+    font-size: 1.2rem;
+    cursor: pointer;
+    font-weight: 300;
+    letter-spacing: 3px;
+    &:hover {
+      color: $primary-color;
+    }
+  }
+  i {
+    color: $primary-color;
+    cursor: pointer;
+  }
+}
