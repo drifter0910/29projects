@@ -23,6 +23,7 @@ const Project5 = () => {
               marginRight: "1rem",
               fontSize: "1.5rem",
               cursor: "pointer",
+              color: "red",
             }}
             class="fas fa-times"
           ></i>
