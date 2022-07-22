@@ -1,7 +1,7 @@
 import { Row, Col } from "antd";
 import React from "react";
 import "./Home.scss";
-import { useNavigate, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 const Home = () => {
   const projectsArray = [
     {
@@ -28,6 +28,11 @@ const Home = () => {
       name: "Sidebar",
       link: "/project5",
       img: "https://www.vanillajavascriptprojects.com/_next/image?url=https%3A%2F%2Fdl.airtable.com%2F.attachments%2F0e5b14b0c1a3219c5121e01bac417d6b%2F63f224e5%2FScreen_Shot_2020-04-15_at_4.32.01_PM.png%3Fts%3D1658425599%26userId%3DusrQMwWEPx18KgLcP%26cs%3D41bc98727a6d2e23&w=2048&q=75",
+    },
+    {
+      name: "Modal",
+      link: "/project6",
+      img: "https://www.vanillajavascriptprojects.com/_next/image?url=https%3A%2F%2Fdl.airtable.com%2F.attachments%2Fbe3b5557ddf6d34e54369f0a36fc169d%2F00ddf198%2FScreen_Shot_2020-04-20_at_9.11.56_AM.png%3Fts%3D1658425599%26userId%3DusrQMwWEPx18KgLcP%26cs%3D5d54a8d333a69b6a&w=1920&q=75",
     },
   ];
   return (

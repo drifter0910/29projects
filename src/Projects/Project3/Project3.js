@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./Project3.scss";
 const Project3 = () => {
   // id name job img text

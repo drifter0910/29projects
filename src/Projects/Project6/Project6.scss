@@ -1,0 +1,73 @@
+.project6 {
+  width: 100%;
+  height: 100vh;
+  background: url("https://vanilla-js-basic-project-6-modal.netlify.app/hero.jpeg")
+    center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__banner {
+    max-width: 620px;
+    width: 90vw;
+    background-color: white;
+    padding: 64px 0;
+    text-align: center;
+    border-radius: 10px;
+    z-index: 1;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  h1 {
+    font-size: 5rem;
+  }
+  button {
+    background-color: #49a6e9;
+    color: white;
+    padding: 4px 8px;
+    font-size: 1rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 8px;
+    border: 1px solid #49a6e9;
+    cursor: pointer;
+    &:hover {
+      background-color: white;
+      color: #49a6e9;
+    }
+  }
+  &__modal {
+    position: fixed;
+    display: flex;
+    display: none;
+    max-width: 620px;
+    height: 200px;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    width: 90vw;
+    background-color: white;
+    transition: all 1s linear;
+    z-index: 3;
+  }
+  &__modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(73, 166, 233, 0.5);
+    display: grid;
+    place-items: center;
+    z-index: 2;
+  }
+  &__close {
+    position: absolute;
+    top: 5%;
+    right: 0;
+  }
+}
+.project6__modal.active {
+  display: flex;
+  transition: all 1s linear;
+}
+// #a0cfef bg color modal

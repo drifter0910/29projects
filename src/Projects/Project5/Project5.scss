@@ -15,6 +15,11 @@
     right: 2rem;
     font-size: 3rem;
     color: $primary-color;
+    &-icon {
+      &:hover {
+        color: #a5d5f9;
+      }
+    }
   }
   &__navbar {
     background-color: white;
@@ -23,17 +28,37 @@
     left: 0;
     width: 400px;
     height: 100%;
-    transform: translateX(-1000px);
+    transform: translateX(-100%);
     transition: all 1s ease;
+    display: flex;
+    flex-direction: column;
   }
   &__list {
-    padding: 1rem;
+    padding: 1rem 0;
     font-size: 1.5rem;
     ul {
       list-style: none;
     }
     li {
-      padding: 1rem 0;
+      padding: 1rem;
+      cursor: pointer;
+      transition: all 1s ease;
+      &:hover {
+        background-color: #a5d5f9;
+        transform: scale(0.98);
+      }
+    }
+  }
+  &__social {
+    margin-top: auto;
+    color: $primary-color;
+    font-size: 1.5rem;
+    text-align: center;
+    a {
+      padding: 1rem;
+      &:hover {
+        color: black;
+      }
     }
   }
 }
