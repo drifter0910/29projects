@@ -33,4 +33,25 @@
   h1 {
     font-size: 3rem;
   }
+  &__card {
+    &:hover {
+      transform: scale(1.05);
+      transition: all 0.4s ease;
+    }
+  }
+  &__after {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    position: relative;
+    &::after {
+      content: "";
+      background-color: #f1db51;
+      position: absolute;
+      width: 100px;
+      height: 4px;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
 }

@@ -1,9 +1,8 @@
 import { Row, Col } from "antd";
 import React from "react";
 import "./Home.scss";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 const Home = () => {
-  const navigate = useNavigate();
   const projectsArray = [
     {
       name: "Color Flipper",
@@ -65,25 +64,27 @@ const Home = () => {
         </div>
       </div>
       <div className="home__projects">
-        <h1>DOM Projects</h1>
+        <div className="home__after">DOM Projects</div>
         <div className="home__projects-list">
-          <Row gutter={[32, 16]} style={{ maxWidth: "1140px", margin: "auto" }}>
+          <Row gutter={[32, 32]} style={{ maxWidth: "1140px", margin: "auto" }}>
             {projectsArray.map((project) => (
               <Col
-                onClick={() => navigate(`${project.link}`)}
+                className="home__card"
                 style={{ cursor: "pointer" }}
                 lg={8}
                 md={16}
                 sm={24}
               >
-                <img
-                  style={{ width: "100%", maxHeight: "185px" }}
-                  src={project.img}
-                  alt=""
-                />
-                <h3 style={{ padding: "1rem", backgroundColor: "white" }}>
-                  {project.name}
-                </h3>
+                <Link to={`${project.link}`} target="_blank">
+                  <img
+                    style={{ width: "100%", maxHeight: "185px" }}
+                    src={project.img}
+                    alt=""
+                  />
+                  <h3 style={{ padding: "1rem", backgroundColor: "white" }}>
+                    {project.name}
+                  </h3>
+                </Link>
               </Col>
             ))}
           </Row>
