@@ -44,6 +44,11 @@ const Home = () => {
       link: "/project8",
       img: "https://www.vanillajavascriptprojects.com/_next/image?url=https%3A%2F%2Fdl.airtable.com%2F.attachments%2F8907584d0d2517d17c61fbfc93fa72c7%2Fc7d36e50%2FScreenShot2022-07-21at10.44.16AM.png%3Fts%3D1658425599%26userId%3DusrQMwWEPx18KgLcP%26cs%3D29fc4379b5cc0dbf&w=1920&q=75",
     },
+    {
+      name: "Video",
+      link: "/project9",
+      img: "https://www.vanillajavascriptprojects.com/_next/image?url=https%3A%2F%2Fdl.airtable.com%2F.attachments%2F6bfd0dc23e81b53006900633e7569ca1%2F475c48f4%2FScreen_Shot_2020-04-20_at_9.12.28_AM.png%3Fts%3D1658425599%26userId%3DusrQMwWEPx18KgLcP%26cs%3D40070281bd000edb&w=2048&q=75",
+    },
   ];
   return (
     <div className="home">

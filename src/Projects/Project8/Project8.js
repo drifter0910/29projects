@@ -102,8 +102,8 @@ const Project8 = () => {
     return (
       <Row gutter={[16, 16]}>
         {menu &&
-          menu.map((item, index) => (
-            <Col key={index} lg={12} md={12}>
+          menu.map((item) => (
+            <Col key={item.id} lg={12} md={12}>
               <div className="project8__card">
                 <div className="project8__card-img">
                   <img src={item.img} alt="" />

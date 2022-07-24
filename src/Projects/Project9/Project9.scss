@@ -1,0 +1,62 @@
+.project9 {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+
+  &__video {
+    object-fit: cover;
+    z-index: 1;
+    cursor: pointer;
+  }
+  &::after {
+    position: absolute;
+    content: "";
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+  }
+  &__text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    h1 {
+      color: white;
+      font-size: 4rem;
+    }
+    z-index: 3;
+  }
+  button {
+    cursor: pointer;
+    width: 130px;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    justify-content: space-between;
+    margin: 3rem;
+    padding: 4px 0;
+    border-radius: 10px;
+    bottom: 0;
+    left: 0;
+    z-index: 3;
+    border: none;
+  }
+}
+.switch {
+  content: "";
+  position: absolute;
+  background-color: #49a6e9;
+  border-radius: 10px;
+  width: 75px;
+  height: 100%;
+  transition: all 0.5s ease;
+}
+.project9__button.active {
+  .switch {
+    margin-left: 55px !important;
+  }
+}
