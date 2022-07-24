@@ -1,1 +1,11 @@
 $primary-color: hsl(205, 90%, 76%);
+@mixin sperate($top, $width, $height, $color) {
+  &::before {
+    content: "";
+    position: absolute;
+    top: $top;
+    width: $width;
+    height: $height;
+    background-color: $color;
+  }
+}
