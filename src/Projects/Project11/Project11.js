@@ -23,6 +23,7 @@ const Project11 = () => {
       return filtered.title === title;
     });
     setDesc(filterData);
+    console.log(index);
     setToggle(index);
   };
   return (
@@ -52,7 +53,7 @@ const Project11 = () => {
                     className={
                       toggle === index
                         ? "project11__desc-category-item active "
-                        : "project11__desc-category-item "
+                        : "project11__desc-category-item"
                     }
                   >
                     {category.title}
