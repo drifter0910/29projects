@@ -1,0 +1,134 @@
+@import "../../variables";
+.scrolled {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  background-color: white;
+  transition: all 0.5s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  .project10__ul {
+    li {
+      color: black;
+    }
+  }
+}
+
+.project10 {
+  height: 100vh;
+  h2 {
+    color: $primary-color;
+  }
+  &__navbar {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    height: 4.5rem;
+    align-items: center;
+    &-left {
+      img {
+        height: 50px;
+      }
+    }
+  }
+  &__ul {
+    ul {
+      display: flex;
+      gap: 0 2rem;
+      list-style: none;
+      margin: 0;
+    }
+  }
+  &__body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100% - 3rem);
+    text-align: center;
+  }
+
+  button {
+    padding: 8px 12px;
+    font-size: 1rem;
+    cursor: pointer;
+    background: transparent;
+    text-transform: uppercase;
+    border: 1px solid white;
+    color: white;
+    letter-spacing: 2px;
+    transition: all 0.5s ease;
+    &:hover {
+      transition: all 0.5s ease;
+      background-color: white;
+      color: #41cfd4;
+    }
+  }
+  li {
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+    letter-spacing: 3px;
+  }
+  i {
+    color: $primary-color;
+    cursor: pointer;
+  }
+  &__header {
+    height: 100vh;
+    position: relative;
+    text-align: center;
+    background: linear-gradient(rgba(63, 208, 212, 0.5), rgba(0, 0, 0, 0.7)),
+      url("https://vannilla-js-basic-project-10-scroll.netlify.app/hero-bcg.jpeg")
+        center/cover no-repeat;
+  }
+  &__hero {
+    display: flex;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    &-content {
+      h1 {
+        color: white;
+        text-transform: uppercase;
+        font-size: 4rem;
+      }
+      p {
+        color: white;
+      }
+    }
+  }
+  &__about-us,
+  &__our-services,
+  &__tour {
+    height: 80vh;
+    font-size: 2.5rem;
+    text-align: center;
+    font-weight: bold;
+    p {
+      color: black;
+      margin: 0 !important;
+    }
+    span {
+      color: #41cfd4;
+    }
+  }
+  &__about-us,
+  &__tour {
+    background-color: #f1f5f8;
+  }
+  &__footer {
+    p {
+      margin: 0;
+      font-weight: 200;
+    }
+    text-align: center;
+    background-color: #102a41;
+    padding: 4rem 5rem;
+    color: white;
+    letter-spacing: 3px;
+    font-size: 1.2rem;
+  }
+}

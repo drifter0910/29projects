@@ -49,6 +49,21 @@ const Home = () => {
       link: "/project9",
       img: "https://www.vanillajavascriptprojects.com/_next/image?url=https%3A%2F%2Fdl.airtable.com%2F.attachments%2F6bfd0dc23e81b53006900633e7569ca1%2F475c48f4%2FScreen_Shot_2020-04-20_at_9.12.28_AM.png%3Fts%3D1658425599%26userId%3DusrQMwWEPx18KgLcP%26cs%3D40070281bd000edb&w=2048&q=75",
     },
+    {
+      name: "Scroll",
+      link: "/project10",
+      img: "https://www.vanillajavascriptprojects.com/_next/image?url=https%3A%2F%2Fdl.airtable.com%2F.attachments%2F97115ace07d39ea61354845f74c911b6%2F521c4382%2FScreen_Shot_2020-04-20_at_9.20.30_AM.png%3Fts%3D1658425599%26userId%3DusrQMwWEPx18KgLcP%26cs%3Db88061e1b36b59a6&w=1920&q=75",
+    },
+    {
+      name: "Tabs",
+      link: "/project11",
+      img: "https://www.vanillajavascriptprojects.com/_next/image?url=https%3A%2F%2Fdl.airtable.com%2F.attachments%2F3d71a758aad83a749e92755f4d98fa99%2F98e9512a%2FScreen_Shot_2020-04-23_at_3.01.48_PM.png%3Fts%3D1658425599%26userId%3DusrQMwWEPx18KgLcP%26cs%3D0849abc437c97415&w=1920&q=75",
+    },
+    {
+      name: "Countdown Timer",
+      link: "/project12",
+      img: "https://www.vanillajavascriptprojects.com/_next/image?url=https%3A%2F%2Fdl.airtable.com%2F.attachments%2F5938941b7b4014064bc8bf56ce4d4046%2Fa4813ed3%2FScreen_Shot_2020-04-23_at_3.00.42_PM.png%3Fts%3D1658425599%26userId%3DusrQMwWEPx18KgLcP%26cs%3De649893882c2924c&w=1920&q=75",
+    },
   ];
   return (
     <div className="home">
@@ -92,12 +107,16 @@ const Home = () => {
                 className="home__card"
                 style={{ cursor: "pointer" }}
                 lg={8}
-                md={16}
-                sm={24}
+                md={12}
+                sm={12}
               >
                 <Link to={`${project.link}`} target="_blank">
                   <img
-                    style={{ width: "100%", maxHeight: "185px" }}
+                    style={{
+                      width: "100%",
+                      minHeight: "185px",
+                      maxHeight: "185px",
+                    }}
                     src={project.img}
                     alt=""
                   />
