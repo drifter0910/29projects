@@ -80,6 +80,78 @@ const Home = () => {
       img: "https://www.vanillajavascriptprojects.com/_next/image?url=https%3A%2F%2Fdl.airtable.com%2F.attachments%2Fdb6ee3efd495c9351eb5972f1017b727%2Fcfaf196d%2FScreen_Shot_2020-04-27_at_9.04.28_AM.png%3Fts%3D1658425599%26userId%3DusrQMwWEPx18KgLcP%26cs%3D0c042cd9d9ea7f50&w=1920&q=75",
     },
   ];
+  const projectsArray2 = [
+    {
+      name: "Counter",
+      link: "/project16",
+      img: "https://www.vanillajavascriptprojects.com/_next/image?url=https%3A%2F%2Fdl.airtable.com%2F.attachments%2F4aa780c6a5d4cd8a119ac19ae0861b0d%2F5a89b95e%2FScreenShot2022-02-20at3.21.01PM.png%3Fts%3D1658425599%26userId%3DusrQMwWEPx18KgLcP%26cs%3D0ec978c502819e3d&w=1920&q=75",
+    },
+    {
+      name: "Gallery",
+      link: "/project17",
+      img: "https://www.vanillajavascriptprojects.com/_next/image?url=https%3A%2F%2Fdl.airtable.com%2F.attachments%2Ff825e05e76926146accf91e8990beb4c%2Fb0d8cfc6%2FScreenShot2022-02-20at3.26.27PM.png%3Fts%3D1658425599%26userId%3DusrQMwWEPx18KgLcP%26cs%3D7f754c47919c1c2b&w=1920&q=75",
+    },
+    {
+      name: "Numbers",
+      link: "/project3",
+      img: "https://www.vanillajavascriptprojects.com/_next/image?url=https%3A%2F%2Fdl.airtable.com%2F.attachments%2F71c29f543e214953f65fb9b2689f0473%2Ff41333b6%2FScreenShot2022-02-21at9.08.22AM.png%3Fts%3D1658425599%26userId%3DusrQMwWEPx18KgLcP%26cs%3D80972e619e3ce9e2&w=1920&q=75",
+    },
+    {
+      name: "Dark Mode",
+      link: "/project4",
+      img: "https://www.vanillajavascriptprojects.com/_next/image?url=https%3A%2F%2Fdl.airtable.com%2F.attachments%2Fd5a43cd808d5eea7a5c47c11894ced76%2Faac90546%2FScreenShot2022-02-20at3.04.53PM.png%3Fts%3D1658425599%26userId%3DusrQMwWEPx18KgLcP%26cs%3Dabcca24b5f95b8fb&w=1920&q=75",
+    },
+    {
+      name: "Filters",
+      link: "/project5",
+      img: "https://www.vanillajavascriptprojects.com/_next/image?url=https%3A%2F%2Fdl.airtable.com%2F.attachments%2F69e9f7c23934982c6f33c228c640251f%2F83405f2c%2FScreenShot2022-02-19at4.10.44PM.png%3Fts%3D1658425599%26userId%3DusrQMwWEPx18KgLcP%26cs%3D7019bb8db72794c3&w=1920&q=75",
+    },
+    {
+      name: "Dad Jokes",
+      link: "/project6",
+      img: "https://www.vanillajavascriptprojects.com/_next/image?url=https%3A%2F%2Fdl.airtable.com%2F.attachments%2Fad41c95ea7ed461115fbf923200a82cb%2F273418c0%2FScreenShot2022-02-21at2.42.06PM.png%3Fts%3D1658425599%26userId%3DusrQMwWEPx18KgLcP%26cs%3D6e689cad33a0ef78&w=1920&q=75",
+    },
+    {
+      name: "Products",
+      link: "/project7",
+      img: "https://www.vanillajavascriptprojects.com/_next/image?url=https%3A%2F%2Fdl.airtable.com%2F.attachments%2F6a0a19b2a2427dcd644e8334f4f417f6%2F17cb7b82%2FScreenShot2022-02-21at3.54.06PM.png%3Fts%3D1658425599%26userId%3DusrQMwWEPx18KgLcP%26cs%3D6312157c4fcd11ee&w=1920&q=75",
+    },
+    {
+      name: "Random User",
+      link: "/project8",
+      img: "https://www.vanillajavascriptprojects.com/_next/image?url=https%3A%2F%2Fdl.airtable.com%2F.attachments%2F19b84e49a5ab8c1d00c12318f9689870%2Fc7d17e27%2FScreen_Shot_2020-07-01_at_11.14.49_AM.png%3Fts%3D1658425599%26userId%3DusrQMwWEPx18KgLcP%26cs%3Dc8c6397aba9e9b6b&w=1920&q=75",
+    },
+    {
+      name: "Cocktails",
+      link: "/project9",
+      img: "https://www.vanillajavascriptprojects.com/_next/image?url=https%3A%2F%2Fdl.airtable.com%2F.attachments%2Fd487fd44285a02f7baada1fc0a4e6b0c%2Fb173c9a1%2FScreen_Shot_2020-07-01_at_11.14.14_AM.png%3Fts%3D1658425599%26userId%3DusrQMwWEPx18KgLcP%26cs%3D66965a052a4986a7&w=1920&q=75",
+    },
+    {
+      name: "Slider",
+      link: "/project10",
+      img: "https://www.vanillajavascriptprojects.com/_next/image?url=https%3A%2F%2Fdl.airtable.com%2F.attachments%2F90b5a82549e737ea17b6a5ba379145ca%2F34a2585d%2FScreen_Shot_2020-07-28_at_5.54.38_PM.png%3Fts%3D1658425599%26userId%3DusrQMwWEPx18KgLcP%26cs%3Dabc39180ebc81cce&w=1920&q=75",
+    },
+    {
+      name: "Stripe Submenus",
+      link: "/project11",
+      img: "https://www.vanillajavascriptprojects.com/_next/image?url=https%3A%2F%2Fdl.airtable.com%2F.attachments%2Ff83b13bfbb1c50d786485c03ddbb086f%2Fe9dff8b5%2Fcopy.png%3Fts%3D1658425599%26userId%3DusrQMwWEPx18KgLcP%26cs%3D5ba09a0918dbeaf4&w=1920&q=75",
+    },
+    {
+      name: "Pagination",
+      link: "/project12",
+      img: "https://www.vanillajavascriptprojects.com/_next/image?url=https%3A%2F%2Fdl.airtable.com%2F.attachments%2F86e2316345e63e7159754a9eb49bf466%2F17a1e8c5%2FScreenShot2020-10-21at3.28.28PM.png%3Fts%3D1658425599%26userId%3DusrQMwWEPx18KgLcP%26cs%3Dd44fa62a81db457b&w=1920&q=75",
+    },
+    {
+      name: "Wikipedia",
+      link: "/project13",
+      img: "https://www.vanillajavascriptprojects.com/_next/image?url=https%3A%2F%2Fdl.airtable.com%2F.attachments%2F1222df7c972de7c4ec87a57734d7f86b%2F70ee03cb%2FScreenShot2022-02-22at1.05.43PM.png%3Fts%3D1658425599%26userId%3DusrQMwWEPx18KgLcP%26cs%3D7bd35bdfac981a9c&w=1920&q=75",
+    },
+    {
+      name: "Comfy Store",
+      link: "/project14",
+      img: "https://www.vanillajavascriptprojects.com/_next/image?url=https%3A%2F%2Fdl.airtable.com%2F.attachments%2F61588dca53a363c548f37b65ccdeedc6%2Fbbacc541%2FScreen_Shot_2020-08-13_at_8.49.11_AM.png%3Fts%3D1658425599%26userId%3DusrQMwWEPx18KgLcP%26cs%3D09b56850865a11a6&w=1920&q=75",
+    },
+  ];
   return (
     <div className="home">
       <div className="home__hero">
@@ -124,6 +196,39 @@ const Home = () => {
                 lg={8}
                 md={12}
                 sm={12}
+                key={project.name}
+              >
+                <Link to={`${project.link}`} target="_blank">
+                  <img
+                    style={{
+                      width: "100%",
+                      minHeight: "185px",
+                      maxHeight: "185px",
+                    }}
+                    src={project.img}
+                    alt=""
+                  />
+                  <h3 style={{ padding: "1rem", backgroundColor: "white" }}>
+                    {project.name}
+                  </h3>
+                </Link>
+              </Col>
+            ))}
+          </Row>
+        </div>
+      </div>
+      <div className="home__projects">
+        <div className="home__after">Course Exclusive</div>
+        <div className="home__projects-list">
+          <Row gutter={[32, 32]} style={{ maxWidth: "1140px", margin: "auto" }}>
+            {projectsArray2.map((project) => (
+              <Col
+                className="home__card"
+                style={{ cursor: "pointer" }}
+                lg={8}
+                md={12}
+                sm={12}
+                key={project.name}
               >
                 <Link to={`${project.link}`} target="_blank">
                   <img

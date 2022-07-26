@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./Project14.scss";
+import Project14List from "./Project14List";
 const Project14 = () => {
   const getData = JSON.parse(localStorage.getItem("state"));
   const [initState, setInitState] = useState(getData ? getData : []);
@@ -7,14 +8,12 @@ const Project14 = () => {
   const [editTerm, setEditTerm] = useState(null);
   const [editInput, setEditInput] = useState();
   const [toggle, setToggle] = useState(false);
-
   const handleSubmit = () => {
     if (input !== "") {
       const props = {
         id: Math.floor(Math.random() * 10000),
         data: input,
       };
-      console.log(props);
       setInitState((prevState) => {
         const newState = [...prevState, props];
         localStorage.setItem("state", JSON.stringify(newState));
@@ -31,6 +30,16 @@ const Project14 = () => {
     localStorage.setItem("state", JSON.stringify(newState));
     appendNoti("remove");
     setToggle(false);
+  };
+  const handleEdit = () => {
+    const editedTodo = [...initState].map((todo) => {
+      if (todo.id === editTerm.id) {
+        todo.data = editInput;
+      }
+      return todo;
+    });
+    setInitState([...editedTodo]);
+    localStorage.setItem("state", JSON.stringify(initState));
   };
   const handleClear = () => {
     setInitState([]);
@@ -64,16 +73,7 @@ const Project14 = () => {
     setEditTerm(item);
     setToggle(!toggle);
   };
-  const handleEdit = () => {
-    const editedTodo = [...initState].map((todo) => {
-      if (todo.id === editTerm.id) {
-        todo.data = editInput;
-      }
-      return todo;
-    });
-    setInitState([...editedTodo]);
-    localStorage.setItem("state", JSON.stringify(initState));
-  };
+
   return (
     <div className="project14">
       <div className="project14__container">
@@ -85,7 +85,6 @@ const Project14 = () => {
           value={input}
           placeholder="e.g. eggs"
           onKeyPress={handleSubmitEnter}
-          // ref={inputRef}
         />
         <button onClick={handleSubmit}>Submit</button>
         {toggle ? (
@@ -100,24 +99,12 @@ const Project14 = () => {
           </div>
         ) : undefined}
         <div className="project14__list">
-          {initState?.map((item, index) => (
-            <div key={index} className="project14__item">
-              <p>{item.data}</p>
-              <div className="project14__button">
-                <i
-                  onClick={() => handeClickEdit(item)}
-                  className="fas fa-edit"
-                ></i>
-                <i
-                  onClick={() => handleDelete(index)}
-                  className="fas fa-trash"
-                ></i>
-              </div>
-            </div>
-          ))}
-          {initState.length !== 0 ? (
-            <h3 onClick={handleClear}>Clear Items</h3>
-          ) : undefined}
+          <Project14List
+            initState={initState}
+            handeClickEdit={handeClickEdit}
+            handleDelete={handleDelete}
+            handleClear={handleClear}
+          />
         </div>
       </div>
     </div>

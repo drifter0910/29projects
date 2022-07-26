@@ -23,7 +23,6 @@ const Project11 = () => {
       return filtered.title === title;
     });
     setDesc(filterData);
-    console.log(index);
     setToggle(index);
   };
   return (
