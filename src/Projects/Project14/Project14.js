@@ -30,11 +30,13 @@ const Project14 = () => {
     setInitState([...newState]);
     localStorage.setItem("state", JSON.stringify(newState));
     appendNoti("remove");
+    setToggle(false);
   };
   const handleClear = () => {
     setInitState([]);
     localStorage.setItem("state", JSON.stringify([]));
     appendNoti("remove");
+    setToggle(false);
   };
   const appendNoti = (status) => {
     const message__container = document.querySelector(".message__container");
