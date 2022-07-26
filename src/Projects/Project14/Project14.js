@@ -4,16 +4,21 @@ const Project14 = () => {
   const getData = JSON.parse(localStorage.getItem("state"));
   const [initState, setInitState] = useState(getData ? getData : []);
   const [input, setInput] = useState("");
-  const [toggle, setToggle] = useState(false);
-  const [indexUpdate, setIndexUpdate] = useState();
+  // const [toggle, setToggle] = useState(false);
+  const [idItem, setIdItem] = useState();
   const inputRef = useRef(null);
   useEffect(() => {
     inputRef.current.focus();
   });
   const handleSubmit = () => {
     if (input !== "") {
+      const props = {
+        id: Math.floor(Math.random() * 10000),
+        data: input,
+      };
+      console.log(props);
       setInitState((prevState) => {
-        const newState = [...prevState, input];
+        const newState = [...prevState, props];
         localStorage.setItem("state", JSON.stringify(newState));
         return newState;
       });
@@ -28,20 +33,15 @@ const Project14 = () => {
     localStorage.setItem("state", JSON.stringify(newState));
     appendNoti("remove");
   };
-  const handleEdit = () => {
-    console.log(indexUpdate);
-    console.log(initState);
-    const newArray = initState[indexUpdate];
-    console.log("ehheheehohoho");
-  };
+  const handleEdit = () => {};
   const handleClear = () => {
     setInitState([]);
     localStorage.setItem("state", JSON.stringify([]));
   };
   const handleToggle = (index) => {
-    setToggle(!toggle);
-    setIndexUpdate(index);
-    setInput(initState[index]);
+    // setToggle(!toggle);
+    // setIdItem(initState[index].id);
+    // setInput(initState[index].data);
   };
 
   const appendNoti = (status) => {
@@ -73,15 +73,12 @@ const Project14 = () => {
           onKeyPress={handleKeyPress}
           ref={inputRef}
         />
-        {toggle ? (
-          <button onClick={handleEdit}>Edit</button>
-        ) : (
-          <button onClick={handleSubmit}>Submit</button>
-        )}
+        <button onClick={handleSubmit}>Submit</button>
+
         <div className="project14__list">
           {initState?.map((item, index) => (
             <div key={index} className="project14__item">
-              <p>{item}</p>
+              <p>{item.data}</p>
               <div className="project14__button">
                 <i
                   onClick={() => handleToggle(index)}
