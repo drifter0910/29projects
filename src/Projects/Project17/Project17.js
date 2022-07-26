@@ -58,7 +58,6 @@ const Project17 = () => {
   const [currentView, setCurrentView] = useState(0);
   const [modalArray, setModalArray] = useState();
   const [totalView, setTotalView] = useState();
-  //   totalView = nature.length - 1;
   const handleNext = () => {
     if (currentView === totalView) {
       setCurrentView(0);

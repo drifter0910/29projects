@@ -99,4 +99,10 @@
     width: 200px;
     margin: 0 auto;
   }
+  .edit-container {
+    height: 50px;
+  }
+  .edit-container.active {
+    display: block;
+  }
 }

@@ -88,7 +88,7 @@ const Project14 = () => {
         />
         <button onClick={handleSubmit}>Submit</button>
         {toggle ? (
-          <div className="edit-container">
+          <div className="edit-container active">
             <input
               onChange={(e) => setEditInput(e.target.value)}
               type="text"
@@ -97,7 +97,9 @@ const Project14 = () => {
             />
             <button onClick={handleEdit}>Edit</button>
           </div>
-        ) : undefined}
+        ) : (
+          <div className="edit-container"></div>
+        )}
         <div className="project14__list">
           <Project14List
             initState={initState}
