@@ -1,15 +1,13 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useState } from "react";
 import "./Project14.scss";
 const Project14 = () => {
   const getData = JSON.parse(localStorage.getItem("state"));
   const [initState, setInitState] = useState(getData ? getData : []);
   const [input, setInput] = useState("");
-  // const [toggle, setToggle] = useState(false);
-  const [idItem, setIdItem] = useState();
-  const inputRef = useRef(null);
-  useEffect(() => {
-    inputRef.current.focus();
-  });
+  const [editTerm, setEditTerm] = useState(null);
+  const [editInput, setEditInput] = useState();
+  const [toggle, setToggle] = useState(false);
+
   const handleSubmit = () => {
     if (input !== "") {
       const props = {
@@ -33,17 +31,11 @@ const Project14 = () => {
     localStorage.setItem("state", JSON.stringify(newState));
     appendNoti("remove");
   };
-  const handleEdit = () => {};
   const handleClear = () => {
     setInitState([]);
     localStorage.setItem("state", JSON.stringify([]));
+    appendNoti("remove");
   };
-  const handleToggle = (index) => {
-    // setToggle(!toggle);
-    // setIdItem(initState[index].id);
-    // setInput(initState[index].data);
-  };
-
   const appendNoti = (status) => {
     const message__container = document.querySelector(".message__container");
     if (status === "add") {
@@ -55,10 +47,30 @@ const Project14 = () => {
       message__container.removeChild(message__container.firstElementChild);
     }, 1000);
   };
-  const handleKeyPress = (event) => {
+  const handleSubmitEnter = (event) => {
     if (event.key === "Enter") {
       handleSubmit();
     }
+  };
+  const handleEditEnter = (event) => {
+    if (event.key === "Enter") {
+      handleEdit();
+    }
+  };
+  const handeClickEdit = (item) => {
+    setEditInput(item);
+    setEditTerm(item);
+    setToggle(!toggle);
+  };
+  const handleEdit = () => {
+    const editedTodo = [...initState].map((todo) => {
+      if (todo.id === editTerm.id) {
+        todo.data = editInput;
+      }
+      return todo;
+    });
+    setInitState([...editedTodo]);
+    localStorage.setItem("state", JSON.stringify(initState));
   };
   return (
     <div className="project14">
@@ -70,18 +82,28 @@ const Project14 = () => {
           type="text"
           value={input}
           placeholder="e.g. eggs"
-          onKeyPress={handleKeyPress}
-          ref={inputRef}
+          onKeyPress={handleSubmitEnter}
+          // ref={inputRef}
         />
         <button onClick={handleSubmit}>Submit</button>
-
+        {toggle ? (
+          <div className="edit-container">
+            <input
+              onChange={(e) => setEditInput(e.target.value)}
+              type="text"
+              value={editInput?.data}
+              onKeyPress={handleEditEnter}
+            />
+            <button onClick={handleEdit}>Edit</button>
+          </div>
+        ) : undefined}
         <div className="project14__list">
           {initState?.map((item, index) => (
             <div key={index} className="project14__item">
               <p>{item.data}</p>
               <div className="project14__button">
                 <i
-                  onClick={() => handleToggle(index)}
+                  onClick={() => handeClickEdit(item)}
                   className="fas fa-edit"
                 ></i>
                 <i

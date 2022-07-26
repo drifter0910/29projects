@@ -41,6 +41,8 @@
         background-color: hsl(205, 77%, 27%);
         color: white;
       }
+      min-width: 100px;
+      margin-bottom: 8px;
     }
   }
   &__list {
@@ -94,5 +96,7 @@
     text-align: center;
     color: hsl(360, 71%, 66%);
     letter-spacing: 2px;
+    width: 200px;
+    margin: 0 auto;
   }
 }
