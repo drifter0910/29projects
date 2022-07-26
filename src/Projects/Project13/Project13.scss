@@ -1,0 +1,34 @@
+.project13 {
+  background-color: #f1f5f8;
+  min-height: 100vh;
+  width: 100vw;
+  text-align: center;
+  color: hsl(205, 86%, 17%);
+  &__title {
+    padding-top: 3rem;
+  }
+  &__func {
+    display: flex;
+    justify-content: center;
+    gap: 0 1rem;
+    margin: 2rem 0;
+    input {
+      border-radius: 10px;
+      width: 70px;
+    }
+    button {
+      background: #49a6e9;
+      color: black;
+      border: none;
+      border-radius: 10px;
+      text-transform: uppercase;
+      padding: 2px 1rem;
+      cursor: pointer;
+    }
+  }
+  &__text {
+    margin: 0 auto;
+    width: 650px;
+    color: hsl(210, 22%, 49%);
+  }
+}

@@ -15,6 +15,9 @@ import Project9 from "./Projects/Project9/Project9";
 import Project10 from "./Projects/Project10/Project10";
 import Project11 from "./Projects/Project11/Project11";
 import Project12 from "./Projects/Project12/Project12";
+import Project13 from "./Projects/Project13/Project13";
+import Project14 from "./Projects/Project14/Project14";
+import Project15 from "./Projects/Project15/Project15";
 
 function App() {
   return (
@@ -34,6 +37,9 @@ function App() {
         <Route path="/project10" element={<Project10 />} />
         <Route path="/project11" element={<Project11 />} />
         <Route path="/project12" element={<Project12 />} />
+        <Route path="/project13" element={<Project13 />} />
+        <Route path="/project14" element={<Project14 />} />
+        <Route path="/project15" element={<Project15 />} />
       </Routes>
     </div>
   );

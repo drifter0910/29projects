@@ -32,10 +32,8 @@ const Project12 = () => {
     "November",
     "December",
   ];
-
   const giveawayEnd = new Date("May 30, 2023 12:30:00");
   const countdownDate = giveawayEnd.getTime();
-
   const timeEnd = {
     day: weekdays[giveawayEnd.getDay()],
     month: months[giveawayEnd.getMonth()],
@@ -45,12 +43,10 @@ const Project12 = () => {
     minutes: giveawayEnd.getMinutes(),
     seconds: giveawayEnd.getSeconds(),
   };
-
   const startTimer = () => {
     interval = setInterval(() => {
       const now = new Date().getTime();
       const distance = countdownDate - now;
-
       const days = Math.floor(distance / (1000 * 60 * 60 * 24));
       const hours = Math.floor(
         (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
@@ -59,7 +55,6 @@ const Project12 = () => {
         (distance % (1000 * 60 * 60 * 24)) / (1000 * 60)
       );
       const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
       if (distance < 0) {
         clearInterval(interval.current);
       } else {
@@ -72,12 +67,10 @@ const Project12 = () => {
       }
     }, 1000);
   };
-
   useEffect(() => {
     startTimer();
     return () => clearInterval(interval.current);
   }, []);
-
   return (
     <div className="project12-wrapper">
       <div className="project12">
@@ -121,5 +114,4 @@ const Project12 = () => {
     </div>
   );
 };
-
 export default Project12;

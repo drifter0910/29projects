@@ -64,6 +64,21 @@ const Home = () => {
       link: "/project12",
       img: "https://www.vanillajavascriptprojects.com/_next/image?url=https%3A%2F%2Fdl.airtable.com%2F.attachments%2F5938941b7b4014064bc8bf56ce4d4046%2Fa4813ed3%2FScreen_Shot_2020-04-23_at_3.00.42_PM.png%3Fts%3D1658425599%26userId%3DusrQMwWEPx18KgLcP%26cs%3De649893882c2924c&w=1920&q=75",
     },
+    {
+      name: "Lorem ipsum",
+      link: "/project13",
+      img: "https://www.vanillajavascriptprojects.com/_next/image?url=https%3A%2F%2Fdl.airtable.com%2F.attachments%2F5ba5493beb43898d2ac09dafa4ca4e72%2Fc51fcaa5%2FScreen_Shot_2020-04-23_at_4.47.02_PM.png%3Fts%3D1658425599%26userId%3DusrQMwWEPx18KgLcP%26cs%3D1caff622e2bdc147&w=1920&q=75",
+    },
+    {
+      name: "Grocery Bud",
+      link: "/project14",
+      img: "https://www.vanillajavascriptprojects.com/_next/image?url=https%3A%2F%2Fdl.airtable.com%2F.attachments%2F82c5753df625211b6c45693173222cd7%2F2a9e4092%2FScreen_Shot_2020-04-25_at_8.54.12_PM.png%3Fts%3D1658425599%26userId%3DusrQMwWEPx18KgLcP%26cs%3D7f6b6fe0cc849684&w=1920&q=75",
+    },
+    {
+      name: "Slider",
+      link: "/project15",
+      img: "https://www.vanillajavascriptprojects.com/_next/image?url=https%3A%2F%2Fdl.airtable.com%2F.attachments%2Fdb6ee3efd495c9351eb5972f1017b727%2Fcfaf196d%2FScreen_Shot_2020-04-27_at_9.04.28_AM.png%3Fts%3D1658425599%26userId%3DusrQMwWEPx18KgLcP%26cs%3D0c042cd9d9ea7f50&w=1920&q=75",
+    },
   ];
   return (
     <div className="home">

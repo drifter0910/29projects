@@ -14,7 +14,6 @@ const Project2 = () => {
       h2.style.color = "green";
     }
   }, [count]);
-
   const handleDes = () => {
     setCount(count - 1);
   };
@@ -24,8 +23,6 @@ const Project2 = () => {
   const handleInc = () => {
     return setCount(count + 1);
   };
-
-  console.log(count);
   return (
     <div className="project2">
       <h1>Counter</h1>
