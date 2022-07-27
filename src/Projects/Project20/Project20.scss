@@ -42,4 +42,22 @@
       cursor: pointer;
     }
   }
+  &__title {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+    h1 {
+      position: relative;
+      &::after {
+        content: "";
+        background-color: #645cff;
+        position: absolute;
+        width: 50%;
+        height: 3px;
+        top: 100%;
+        left: 0;
+        transform: translateX(50%);
+      }
+    }
+  }
 }

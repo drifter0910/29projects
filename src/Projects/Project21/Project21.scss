@@ -1,0 +1,26 @@
+.project21 {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 90%;
+  margin: 0 auto;
+  &__content {
+    button {
+      background-color: #b95d2d;
+      color: white;
+      border: none;
+      padding: 4px 8px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 18px;
+    }
+    p {
+      font-size: 1rem;
+      letter-spacing: 2px;
+      margin-top: 1rem;
+    }
+  }
+}
