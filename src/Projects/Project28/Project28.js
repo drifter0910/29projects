@@ -2,21 +2,12 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import "./Project28.scss";
 import { Row, Col } from "antd";
-import { Link } from "react-router-dom";
 const Project28 = () => {
   const [search, setSearch] = useState("");
-  const [data, setData] = useState([]);
+  const [data, setData] = useState();
   const handleSubmit = () => {
     fetchData(search);
   };
-  //   const mess = document.querySelector(".project28__message");
-  //   if (search === "") {
-  //     mess.innerHTML = `<p class="project28__noti ">Please enter value</p>`;
-  //   } else if (data.length === 0) {
-  //     mess.innerHTML = `<p class="project28__noti ">No Matching Results. Please Try Again.</p>`;
-  //   } else if (data.length > 0) {
-  //     mess.removeChild(mess.firstElementChild);
-  //   };
 
   const fetchData = async (params) => {
     await axios
@@ -28,7 +19,7 @@ const Project28 = () => {
         setData(json);
       });
   };
-  console.log(data);
+
   return (
     <div className="project28">
       <div className="container">
