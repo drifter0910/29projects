@@ -6,8 +6,8 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        {route.map((route) => (
-          <Route path={route.path} element={route.element} />
+        {route.map((route, index) => (
+          <Route key={index} path={route.path} element={route.element} />
         ))}
       </Routes>
     </div>

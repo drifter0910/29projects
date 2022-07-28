@@ -1,0 +1,59 @@
+.project28 {
+  background: #f9fafc;
+  height: 100%;
+  min-height: 100vh;
+  .container {
+    text-align: center;
+    padding: 2rem 0;
+  }
+  img {
+    width: 200px;
+  }
+  p {
+    color: #64748b;
+    font-size: 1rem;
+    letter-spacing: 1.5px;
+  }
+  &__form {
+    height: 150px;
+    margin: 0 auto;
+    width: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    input {
+      width: 400px;
+      border-radius: 4px;
+      border: none;
+      background-color: #f9fafc;
+    }
+    button {
+      background-color: #645cff;
+      border: none;
+      color: white;
+      width: 100px;
+      border-radius: 8px;
+    }
+  }
+  &__card {
+    cursor: pointer;
+    padding: 1rem;
+    border-radius: 4px;
+    margin-top: 2rem;
+    background-color: white;
+    min-height: 250px;
+    text-align: left;
+    &:hover {
+      background-color: black;
+      h1 {
+        color: white;
+      }
+    }
+  }
+  &__message {
+    text-align: center;
+    margin-top: 2rem;
+    width: 100%;
+  }
+}

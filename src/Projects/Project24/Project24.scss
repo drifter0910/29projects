@@ -1,0 +1,55 @@
+.project24 {
+  background-color: #f1f5f8;
+  height: 100%;
+  padding: 2rem 0;
+  height: 100vh;
+  h1 {
+    font-size: 3rem;
+  }
+  &__header {
+    text-align: center;
+    padding: 4rem 0;
+    input {
+      max-width: 500px;
+      width: 100%;
+      border-radius: 4px;
+      border: none;
+      background-color: white;
+      height: 40px;
+      padding: 2px 6px;
+    }
+  }
+  &__item {
+    position: relative;
+    img {
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      cursor: pointer;
+      border-radius: 8px;
+      border: 12px solid white;
+      height: 270px;
+      object-fit: cover;
+      transition: all 1s ease;
+      &:hover {
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        transform: scale(1.005);
+        filter: blur(2px) grayscale(50%);
+      }
+    }
+    h2 {
+      position: absolute;
+      right: 0;
+      bottom: -15px;
+      padding: 1rem 2rem;
+      font-size: 1.2rem;
+      background-color: black;
+      color: white;
+      border-radius: 8px;
+      z-index: 2;
+    }
+  }
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}

@@ -23,6 +23,10 @@ import Project7 from "../Projects/Project7/Project7";
 import Project8 from "../Projects/Project8/Project8";
 import Project9 from "../Projects/Project9/Project9";
 import Project23 from "../Projects/Project23/Project23";
+import Project24 from "../Projects/Project24/Project24";
+import Project24Detail from "../Projects/Project24/Project24Detail";
+import Project28 from "../Projects/Project28/Project28";
+
 export const route = [
   {
     path: "/",
@@ -123,5 +127,17 @@ export const route = [
   {
     path: "/project23",
     element: <Project23 />,
+  },
+  {
+    path: "/project24",
+    element: <Project24 />,
+  },
+  {
+    path: "/project24/:id",
+    element: <Project24Detail />,
+  },
+  {
+    path: "/project28",
+    element: <Project28 />,
   },
 ];
