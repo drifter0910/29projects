@@ -33,8 +33,6 @@
     height: 4.5rem;
     align-items: center;
     padding: 0 1rem;
-    &-right {
-    }
   }
   &__link {
     transition: all 1s ease;
@@ -209,5 +207,13 @@
         color: gray;
       }
     }
+  }
+}
+@media (max-width: 600px) {
+  .project26__hero-desc h1 {
+    font-size: 3rem;
+  }
+  .project26::before {
+    background-size: auto;
   }
 }
