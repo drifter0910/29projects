@@ -1,0 +1,64 @@
+.containerz {
+  background-color: #f1f5f8 !important;
+  text-align: center;
+  width: 100%;
+}
+.project27 {
+  max-width: 1200px;
+  width: 1200px;
+  margin: 0 auto;
+  height: 100vh;
+  img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+  }
+
+  &__item {
+    background-color: white;
+    height: 230px;
+    width: 250px;
+    border-radius: 10px;
+    padding: 1rem;
+    button {
+      background-color: #49a6e9;
+      border-radius: 20px;
+      border: none;
+      cursor: pointer;
+      padding: 4px 12px;
+    }
+    a {
+      color: white;
+    }
+    p {
+      text-transform: capitalize;
+      margin-top: 4px;
+    }
+  }
+  .paginationBttns {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    a {
+      padding: 10px;
+      margin: 8px;
+      border-radius: 8px;
+      background-color: #8bcbf9;
+      color: white;
+    }
+    .previous,
+    .next {
+      li {
+        background: transparent;
+        color: black;
+      }
+    }
+    .btnActive {
+      a {
+        background-color: #053251;
+      }
+    }
+  }
+}
