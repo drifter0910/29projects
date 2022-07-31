@@ -1,0 +1,259 @@
+.project29 {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("./mainbg.jpeg") center/cover;
+  height: 100vh;
+  i,
+  button {
+    cursor: pointer;
+  }
+  &__navbar {
+    max-width: 1200px;
+    position: relative;
+    width: 100%;
+    background-color: transparent;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    height: 6rem;
+    align-items: center;
+    padding: 0 1rem;
+    &-left {
+      position: absolute;
+      left: 45%;
+    }
+    &-cart {
+      button {
+        background-color: transparent;
+        border: none;
+        color: white;
+        font-size: 2rem;
+        position: relative;
+        cursor: pointer;
+      }
+    }
+    &-qty {
+      position: absolute;
+      background-color: #b95d2c;
+      border-radius: 50%;
+      padding: 4.5px 12px;
+      font-size: 12px;
+      left: 30px;
+      top: -5px;
+    }
+  }
+  &__link {
+    transition: all 1s ease;
+
+    ul {
+      display: flex;
+      gap: 0 2rem;
+      list-style: none;
+      margin: 0;
+      height: 100%;
+    }
+    li {
+      font-size: 1.5rem;
+      color: white;
+      letter-spacing: 1px;
+      cursor: pointer;
+    }
+  }
+  &__hero {
+    position: relative;
+    height: calc(100vh - 6rem);
+    max-width: 1200px;
+    margin: 0 auto;
+    &-desc {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      left: 0;
+      top: 30%;
+      h1 {
+        color: white;
+        font-size: 5.25rem;
+        font-family: "Kaushan Script", cursive;
+        letter-spacing: 5px;
+      }
+      h2 {
+        color: white;
+        font-size: 2.75rem;
+      }
+    }
+  }
+  &__button {
+    color: white;
+    background-color: transparent;
+    border: 1px solid white;
+    padding: 8px 1rem;
+    border-radius: 4px;
+    margin-top: 8px;
+    transition: all 0.7s ease;
+    cursor: pointer;
+    &:hover {
+      background-color: white;
+      color: brown;
+    }
+  }
+  &__features {
+    max-width: 1200px;
+    padding: 4rem 0;
+    margin: 0 auto;
+    text-align: center;
+    h2 {
+      font-weight: 500;
+      font-size: 2.5rem;
+      color: black;
+      margin-bottom: 1rem;
+    }
+    p {
+      margin: 0;
+      font-size: 1rem;
+      color: gray;
+      text-transform: capitalize;
+    }
+    span {
+      color: black;
+      font-size: 1rem;
+      font-weight: bold;
+    }
+    img {
+      height: 210px;
+      width: 380px;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+    button {
+      background-color: #b95d2c;
+      border: none;
+      color: white;
+      border-radius: 8px;
+      font-size: 1rem;
+      padding: 8px 1.2rem;
+      margin-top: 1rem;
+      cursor: pointer;
+    }
+    &-item {
+      position: relative;
+      &:hover {
+        .features-btn1,
+        .features-btn2 {
+          display: block;
+        }
+      }
+      .features-btn1 {
+        position: absolute;
+        display: none;
+        top: 25%;
+        left: 35%;
+        height: 50px;
+        border-radius: 50%;
+        text-align: center;
+      }
+      .features-btn2 {
+        position: absolute;
+        display: none;
+        top: 25%;
+        left: 50%;
+        height: 50px;
+        border-radius: 50%;
+        text-align: center;
+      }
+    }
+  }
+  &__cart-modal-wrapper {
+    transform: translateX(100%);
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    &.show {
+      transform: translateX(0);
+      .project29__cart-modal {
+        transform: translateX(0);
+        transition: all 0.4s linear;
+      }
+    }
+  }
+  &__cart-modal {
+    transform: translateX(100%);
+    position: fixed;
+    width: 400px;
+    height: 100vh;
+    right: 0;
+    top: 0;
+    z-index: 2;
+    background-color: white;
+    i {
+      margin: 1rem;
+      font-size: 2rem;
+      cursor: pointer;
+    }
+    img {
+      height: 60px;
+      width: 100px;
+      object-fit: cover;
+      border-radius: 4px;
+      margin-right: 1rem;
+    }
+  }
+  &__cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    p {
+      text-transform: capitalize;
+      margin: 0;
+      font-size: 1rem;
+      letter-spacing: 2px;
+    }
+    h4 {
+      cursor: pointer;
+    }
+  }
+  &__about {
+    background-color: white;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    h1 {
+      margin-top: 4rem;
+      margin-bottom: 2rem;
+      font-size: 3rem;
+    }
+    p {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 1rem;
+      letter-spacing: 1.5px;
+      text-align: left;
+    }
+  }
+}
+.yourbag {
+  text-align: center;
+  font-size: 2rem;
+  font-family: "Kaushan Script", cursive;
+}
+.breadcrumb {
+  max-width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  h2 {
+    color: #6f7a87;
+    font-size: 2rem;
+    text-transform: capitalize;
+  }
+}
+.breadcrumb-wrapper {
+  width: 100%;
+  background-color: #f1f5f8;
+  height: 150px;
+}

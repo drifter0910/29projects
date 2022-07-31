@@ -42,6 +42,49 @@
       cursor: pointer;
     }
   }
+  &__item-z {
+    text-align: center;
+    position: relative;
+    &:hover {
+      .features-btn1,
+      .features-btn2 {
+        display: block;
+      }
+    }
+    .features-btn1 {
+      position: absolute;
+      display: none;
+      top: 30%;
+      left: 35%;
+      border: none;
+      color: white;
+      padding: 4px 8px;
+      background-color: #ba5e2d;
+      border-radius: 50%;
+      text-align: center;
+      cursor: pointer;
+    }
+    .features-btn2 {
+      position: absolute;
+      cursor: pointer;
+      display: none;
+      padding: 4px 8px;
+      border: none;
+      background-color: #ba5e2d;
+      color: white;
+      top: 30%;
+      left: 50%;
+      border-radius: 50%;
+      text-align: center;
+    }
+    img {
+      width: 100%;
+      height: 10rem;
+      object-fit: cover;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  }
   &__title {
     display: flex;
     justify-content: center;
