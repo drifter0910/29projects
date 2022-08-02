@@ -17,7 +17,7 @@ const Project27 = () => {
             <img src={person.avatar_url} alt="" />
             <p>{person.login}</p>
             <button>
-              <a target="_blank" href={person.html_url}>
+              <a target="_blank" rel="noreferrer" href={person.html_url}>
                 VIEW PROFILE
               </a>
             </button>

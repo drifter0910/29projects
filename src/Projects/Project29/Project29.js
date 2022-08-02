@@ -33,7 +33,12 @@ const Project29 = () => {
           <h1>Rest, Relax, Unwind</h1>
           <h2>Embrace your choices - we do</h2>
           <div>
-            <button className="project29__button">SHOW NOW</button>
+            <button
+              onClick={() => navigate("allproduct")}
+              className="project29__button"
+            >
+              SHOW NOW
+            </button>
           </div>
         </div>
       </div>
