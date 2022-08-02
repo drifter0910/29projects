@@ -6,7 +6,7 @@ import Navbar from "./Navbar";
 import Modal from "./Modal";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-const Project20 = () => {
+const AllProduct = () => {
   const { products, addToCart, fetchProducts } = useContext(CartContext);
   const [filterData, setFilterData] = useState(products);
   const [toggle, setToggle] = useState(true);
@@ -50,6 +50,31 @@ const Project20 = () => {
     addToCart(item);
     setToggle(false);
   };
+
+  const handleFilterChange = () => {
+    const priceInput = document.querySelector(".price-filter");
+    const priceValue = document.querySelector(".price-value");
+    let maxPrice = products.map((product) => product.fields.price);
+    maxPrice = Math.max(...maxPrice);
+    priceInput.value = maxPrice;
+    priceInput.max = maxPrice;
+    priceInput.min = 0;
+    priceValue.textContent = `Price: $ ${0}`;
+    priceInput.addEventListener("input", () => {
+      const value = parseInt(priceInput.value);
+      priceInput.value = value;
+      priceValue.textContent = `Price: $ ${value}`;
+      const newProducts = products.filter(
+        (product) => product.fields.price <= value
+      );
+      console.log(newProducts);
+      setFilterData(newProducts);
+    });
+  };
+  useEffect(() => {
+    handleFilterChange();
+  }, [products]);
+
   const color = "black";
   return (
     <div className="project20-wrapper">
@@ -76,6 +101,15 @@ const Project20 = () => {
                   <h3 onClick={() => handleFilter(item)}>{item}</h3>
                 ))}
               </div>
+              <form className="price-form" action="">
+                <input
+                  type="range"
+                  min="0"
+                  max="100"
+                  className="price-filter"
+                />
+                <p className="price-value"></p>
+              </form>
             </div>
           </Col>
           <Col lg={18} md={18} xs={24}>
@@ -85,7 +119,7 @@ const Project20 = () => {
                 : undefined}
               {filterData?.map((item) => (
                 <Col
-                  key={item.name}
+                  key={item.id}
                   className="project20__item-z"
                   lg={8}
                   md={12}
@@ -128,4 +162,4 @@ const Project20 = () => {
   );
 };
 
-export default Project20;
+export default AllProduct;
