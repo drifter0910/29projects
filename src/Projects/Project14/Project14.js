@@ -1,9 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Project14.scss";
 import Project14List from "./Project14List";
 const Project14 = () => {
   const getData = JSON.parse(localStorage.getItem("state"));
   const [initState, setInitState] = useState(getData ? getData : []);
+  useEffect(() => {
+    localStorage.setItem("state", JSON.stringify(initState));
+  }, [initState]);
   const [input, setInput] = useState("");
   const [editTerm, setEditTerm] = useState(null);
   const [editInput, setEditInput] = useState();
@@ -16,7 +19,6 @@ const Project14 = () => {
       };
       setInitState((prevState) => {
         const newState = [...prevState, props];
-        localStorage.setItem("state", JSON.stringify(newState));
         return newState;
       });
       appendNoti("add");
@@ -27,7 +29,6 @@ const Project14 = () => {
     const newState = [...initState];
     newState.splice(index, 1);
     setInitState([...newState]);
-    localStorage.setItem("state", JSON.stringify(newState));
     appendNoti("remove");
     setToggle(false);
   };
@@ -39,11 +40,10 @@ const Project14 = () => {
       return todo;
     });
     setInitState([...editedTodo]);
-    localStorage.setItem("state", JSON.stringify(initState));
+    setToggle(false);
   };
   const handleClear = () => {
     setInitState([]);
-    localStorage.setItem("state", JSON.stringify([]));
     appendNoti("remove");
     setToggle(false);
   };
@@ -73,7 +73,6 @@ const Project14 = () => {
     setEditTerm(item);
     setToggle(!toggle);
   };
-
   return (
     <div className="project14">
       <div className="project14__container">

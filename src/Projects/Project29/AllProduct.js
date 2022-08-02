@@ -56,7 +56,6 @@ const AllProduct = () => {
     const priceValue = document.querySelector(".price-value");
     let maxPrice = products.map((product) => product.fields.price);
     maxPrice = Math.max(...maxPrice);
-    priceInput.value = maxPrice;
     priceInput.max = maxPrice;
     priceInput.min = 0;
     priceValue.textContent = `Price: $ ${0}`;
@@ -67,7 +66,6 @@ const AllProduct = () => {
       const newProducts = products.filter(
         (product) => product.fields.price <= value
       );
-      console.log(newProducts);
       setFilterData(newProducts);
     });
   };
