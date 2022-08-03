@@ -171,16 +171,13 @@ const Home = () => {
             >
               Javascript
             </span>{" "}
-            is no exception. Solidify your knowledge of Javascript by creating
-            these cool projects.
+            is no exception. Solidify your knowledge of Javascript by creating these cool projects.
           </p>
           <button>JOIN THE COURSE</button>
         </div>
         <div className="home__hero-img">
           <img
-            src={
-              "https://www.vanillajavascriptprojects.com/_next/static/media/hero-2.cbb732ba.svg"
-            }
+            src={"https://www.vanillajavascriptprojects.com/_next/static/media/hero-2.cbb732ba.svg"}
             alt=""
           />
         </div>
@@ -208,9 +205,7 @@ const Home = () => {
                     src={project.img}
                     alt=""
                   />
-                  <h3 style={{ padding: "1rem", backgroundColor: "white" }}>
-                    {project.name}
-                  </h3>
+                  <h3 style={{ padding: "1rem", backgroundColor: "white" }}>{project.name}</h3>
                 </Link>
               </Col>
             ))}
@@ -240,9 +235,7 @@ const Home = () => {
                     src={project.img}
                     alt=""
                   />
-                  <h3 style={{ padding: "1rem", backgroundColor: "white" }}>
-                    {project.name}
-                  </h3>
+                  <h3 style={{ padding: "1rem", backgroundColor: "white" }}>{project.name}</h3>
                 </Link>
               </Col>
             ))}
