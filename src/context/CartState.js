@@ -1,4 +1,4 @@
-import { useEffect, useReducer } from "react";
+import { useReducer } from "react";
 import CartContext from "./CartContext";
 import CartReducer from "./CartReducer";
 
@@ -7,9 +7,6 @@ const CartState = ({ children }) => {
     products: [],
     cart: [],
   };
-  useEffect(() => {
-    localStorage.setItem("cartState", JSON.stringify(initalState.cart));
-  }, [initalState]);
 
   const [state, dispatch] = useReducer(CartReducer, initalState);
   const fetchProducts = (data) => {

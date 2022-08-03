@@ -11,22 +11,13 @@ const Navbar = ({ setToggle, toggle, color }) => {
     <div className="project29__navbar">
       <div className="project29__link">
         <ul>
-          <li
-            style={{ color: `${color}` }}
-            onClick={() => navigate("/project29")}
-          >
+          <li style={{ color: `${color}` }} onClick={() => navigate("/project29")}>
             Home
           </li>
-          <li
-            style={{ color: `${color}` }}
-            onClick={() => navigate("/project29/allproduct")}
-          >
+          <li style={{ color: `${color}` }} onClick={() => navigate("/project29/allproduct")}>
             Products
           </li>
-          <li
-            onClick={() => navigate("/project29/about")}
-            style={{ color: `${color}` }}
-          >
+          <li onClick={() => navigate("/project29/about")} style={{ color: `${color}` }}>
             About
           </li>
         </ul>

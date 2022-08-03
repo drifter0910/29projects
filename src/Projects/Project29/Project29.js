@@ -14,12 +14,10 @@ const Project29 = () => {
     fetchData();
   }, []);
   const fetchData = async () => {
-    await axios
-      .get("https://course-api.com/javascript-store-products")
-      .then((res) => {
-        fetchProducts(res.data);
-        console.log(res.data);
-      });
+    await axios.get("https://course-api.com/javascript-store-products").then((res) => {
+      fetchProducts(res.data);
+      console.log(res.data);
+    });
   };
   const handleAddToCart = (item) => {
     addToCart(item);
@@ -33,10 +31,7 @@ const Project29 = () => {
           <h1>Rest, Relax, Unwind</h1>
           <h2>Embrace your choices - we do</h2>
           <div>
-            <button
-              onClick={() => navigate("allproduct")}
-              className="project29__button"
-            >
+            <button onClick={() => navigate("allproduct")} className="project29__button">
               SHOW NOW
             </button>
           </div>
@@ -49,10 +44,7 @@ const Project29 = () => {
             return (
               <Col key={item.id} lg={8} md={24} xs={24}>
                 <div className="project29__features-item">
-                  <img
-                    src={item.fields.image.map((image) => image.url)}
-                    alt=""
-                  />
+                  <img src={item.fields.image.map((image) => image.url)} alt="" />
                   <p>{item.fields.name}</p>
                   <span>${item.fields.price}</span>
                   <button
@@ -61,10 +53,7 @@ const Project29 = () => {
                   >
                     <i className="fas fa-search"></i>
                   </button>
-                  <button
-                    className="features-btn2"
-                    onClick={() => handleAddToCart(item)}
-                  >
+                  <button className="features-btn2" onClick={() => handleAddToCart(item)}>
                     <i className="fas fa-shopping-cart"></i>
                   </button>
                 </div>
@@ -75,11 +64,7 @@ const Project29 = () => {
         <button onClick={() => navigate("allproduct")}>ALL PRODUCTS</button>
       </div>
       <div
-        className={
-          toggle
-            ? "project29__cart-modal-wrapper"
-            : "project29__cart-modal-wrapper show"
-        }
+        className={toggle ? "project29__cart-modal-wrapper" : "project29__cart-modal-wrapper show"}
       >
         <Modal setToggle={setToggle} toggle={toggle} />
       </div>

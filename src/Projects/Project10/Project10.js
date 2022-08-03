@@ -1,11 +1,12 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./Project10.scss";
 // import { Link } from "react-router-dom";
 import { Link } from "react-scroll";
 const Project10 = () => {
+  const [toggle, setToggle] = useState(false);
   useEffect(() => {
     const fixedNav = document.querySelector("#nav");
-    window.onscroll = () => {
+    const onscroll = (window.onscroll = () => {
       if (
         document.body.scrollTop > 80 ||
         document.documentElement.scrollTop > 80
@@ -14,14 +15,20 @@ const Project10 = () => {
       } else {
         fixedNav.classList.remove("scrolled");
       }
-    };
+    });
+    onscroll();
+    return () => window.removeEventListener("scroll", onscroll);
   }, []);
 
   return (
     <div className="project10">
       <div id="header" className="project10__header">
         <nav id="nav" className="">
-          <div className="project10__navbar ">
+          <div
+            className={
+              toggle ? "project10__navbar show " : "project10__navbar "
+            }
+          >
             <div className="project10__navbar-left">
               <img
                 src={
@@ -46,6 +53,7 @@ const Project10 = () => {
                 </Link>
               </ul>
             </div>
+            <i onClick={() => setToggle(!toggle)} className="fas fa-bars"></i>
           </div>
         </nav>
         <div className="project10__hero">

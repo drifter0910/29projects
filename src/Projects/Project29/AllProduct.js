@@ -16,12 +16,10 @@ const AllProduct = () => {
     fetchData();
   }, []);
   const fetchData = async () => {
-    await axios
-      .get("https://course-api.com/javascript-store-products")
-      .then((res) => {
-        fetchProducts(res.data);
-        setFilterData(res.data);
-      });
+    await axios.get("https://course-api.com/javascript-store-products").then((res) => {
+      fetchProducts(res.data);
+      setFilterData(res.data);
+    });
   };
   const mapCategory = products?.map((item) => {
     return item.fields.company;
@@ -63,9 +61,7 @@ const AllProduct = () => {
       const value = parseInt(priceInput.value);
       priceInput.value = value;
       priceValue.textContent = `Price: $ ${value}`;
-      const newProducts = products.filter(
-        (product) => product.fields.price <= value
-      );
+      const newProducts = products.filter((product) => product.fields.price <= value);
       setFilterData(newProducts);
     });
   };
@@ -100,33 +96,17 @@ const AllProduct = () => {
                 ))}
               </div>
               <form className="price-form" action="">
-                <input
-                  type="range"
-                  min="0"
-                  max="100"
-                  className="price-filter"
-                />
+                <input type="range" min="0" max="100" className="price-filter" />
                 <p className="price-value"></p>
               </form>
             </div>
           </Col>
           <Col lg={18} md={18} xs={24}>
             <Row gutter={[16, 16]}>
-              {filterData.length < 1
-                ? "Sorry, no products matched your search"
-                : undefined}
+              {filterData.length < 1 ? "Sorry, no products matched your search" : undefined}
               {filterData?.map((item) => (
-                <Col
-                  key={item.id}
-                  className="project20__item-z"
-                  lg={8}
-                  md={12}
-                  xs={24}
-                >
-                  <img
-                    src={item.fields.image.map((image) => image.url)}
-                    alt=""
-                  />
+                <Col key={item.id} className="project20__item-z" lg={8} md={12} xs={24}>
+                  <img src={item.fields.image.map((image) => image.url)} alt="" />
                   <p>{item.fields.name}</p>
                   <h5>${item.fields.price}</h5>
                   <button
@@ -135,10 +115,7 @@ const AllProduct = () => {
                   >
                     <i className="fas fa-search"></i>
                   </button>
-                  <button
-                    className="features-btn2"
-                    onClick={() => handleAddToCart(item)}
-                  >
+                  <button className="features-btn2" onClick={() => handleAddToCart(item)}>
                     <i className="fas fa-shopping-cart"></i>
                   </button>
                 </Col>
@@ -148,9 +125,7 @@ const AllProduct = () => {
         </Row>
         <div
           className={
-            toggle
-              ? "project29__cart-modal-wrapper"
-              : "project29__cart-modal-wrapper show"
+            toggle ? "project29__cart-modal-wrapper" : "project29__cart-modal-wrapper show"
           }
         >
           <Modal setToggle={setToggle} toggle={toggle} />

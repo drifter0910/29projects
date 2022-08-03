@@ -18,10 +18,7 @@ const Modal = ({ toggle, setToggle }) => {
             return (
               <div className="project29__cart-item" key={item.id}>
                 <div style={{ display: "flex", flexDirection: "row" }}>
-                  <img
-                    src={item.fields.image.map((image) => image.url)}
-                    alt=""
-                  />
+                  <img src={item.fields.image.map((image) => image.url)} alt="" />
                   <div>
                     <p>{item.fields.name}</p>
                     <span>${item.fields.price}</span>

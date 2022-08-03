@@ -1,15 +1,12 @@
 import React, { useContext, useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { Row, Col } from "antd";
 import CartContext from "../../context/CartContext";
 import Navbar from "./Navbar";
 import Modal from "./Modal";
-
 const SingleProduct = () => {
   const { products, addToCart } = useContext(CartContext);
-  const navigate = useNavigate();
   const [toggle, setToggle] = useState(true);
-
   const { id } = useParams();
   let item = products.find((item) => {
     return item.id === id;
@@ -39,9 +36,7 @@ const SingleProduct = () => {
         </Row>
         <div
           className={
-            toggle
-              ? "project29__cart-modal-wrapper"
-              : "project29__cart-modal-wrapper show"
+            toggle ? "project29__cart-modal-wrapper" : "project29__cart-modal-wrapper show"
           }
         >
           <Modal setToggle={setToggle} toggle={toggle} />
