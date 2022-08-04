@@ -1,18 +1,16 @@
 import React, { useContext, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { Row, Col } from "antd";
 import CartContext from "../../context/CartContext";
 import Navbar from "./Navbar";
 import Modal from "./Modal";
 const SingleProduct = () => {
-  const { products, addToCart } = useContext(CartContext);
+  const location = useLocation();
+  const { addToCart } = useContext(CartContext);
   const [toggle, setToggle] = useState(true);
-  const { id } = useParams();
-  let item = products.find((item) => {
-    return item.id === id;
-  });
+  const item = location.state;
+
   const color = "black";
-  console.log(item);
   return (
     <div className="wrapper">
       <Navbar setToggle={setToggle} toggle={toggle} color={color} />

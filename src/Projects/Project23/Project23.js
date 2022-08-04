@@ -12,7 +12,6 @@ const Project23 = () => {
     setLoading(true);
     await axios.get("https://randomuser.me/api/").then((res) => {
       let data = res.data.results;
-      console.log(data);
       setDisplay({
         name: data[0].name.first + data[0].name.last,
         email: data[0].email,

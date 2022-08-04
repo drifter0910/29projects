@@ -24,9 +24,6 @@ const Navbar = ({ setToggle, toggle, color }) => {
       </div>
       <div className="project29__navbar-left">
         <img style={{ color: `${color}` }} src={logo} alt="" />
-        {/* <div className="project29__mobile">
-          <i onClick={() => setToggle(!toggle)} class="fas fa-bars"></i>
-        </div> */}
       </div>
       <div className="project29__navbar-cart">
         <button onClick={() => setToggle(!toggle)}>

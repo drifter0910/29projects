@@ -4,7 +4,7 @@ import axios from "axios";
 import CartContext from "../../context/CartContext";
 import { Row, Col } from "antd";
 import Navbar from "./Navbar";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Modal from "./Modal";
 const Project29 = () => {
   const navigate = useNavigate();
@@ -47,11 +47,10 @@ const Project29 = () => {
                   <img src={item.fields.image.map((image) => image.url)} alt="" />
                   <p>{item.fields.name}</p>
                   <span>${item.fields.price}</span>
-                  <button
-                    onClick={() => navigate(`/project29/${item.id}`)}
-                    className="features-btn1"
-                  >
-                    <i className="fas fa-search"></i>
+                  <button className="features-btn1">
+                    <Link to={`/project29/${item.id}`} state={item}>
+                      <i className="fas fa-search"></i>
+                    </Link>
                   </button>
                   <button className="features-btn2" onClick={() => handleAddToCart(item)}>
                     <i className="fas fa-shopping-cart"></i>
@@ -71,5 +70,4 @@ const Project29 = () => {
     </div>
   );
 };
-
 export default Project29;

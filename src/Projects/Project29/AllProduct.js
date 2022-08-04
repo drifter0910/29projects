@@ -5,12 +5,11 @@ import CartContext from "../../context/CartContext";
 import Navbar from "./Navbar";
 import Modal from "./Modal";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 const AllProduct = () => {
   const { products, addToCart, fetchProducts } = useContext(CartContext);
   const [filterData, setFilterData] = useState(products);
   const [toggle, setToggle] = useState(true);
-  const navigate = useNavigate();
   const [input, setInput] = useState("");
   useEffect(() => {
     fetchData();
@@ -109,11 +108,10 @@ const AllProduct = () => {
                   <img src={item.fields.image.map((image) => image.url)} alt="" />
                   <p>{item.fields.name}</p>
                   <h5>${item.fields.price}</h5>
-                  <button
-                    onClick={() => navigate(`/project29/${item.id}`)}
-                    className="features-btn1"
-                  >
-                    <i className="fas fa-search"></i>
+                  <button className="features-btn1">
+                    <Link to={`/project29/${item.id}`} state={item}>
+                      <i className="fas fa-search"></i>
+                    </Link>
                   </button>
                   <button className="features-btn2" onClick={() => handleAddToCart(item)}>
                     <i className="fas fa-shopping-cart"></i>
