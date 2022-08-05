@@ -9,7 +9,6 @@ const SingleProduct = () => {
   const { addToCart } = useContext(CartContext);
   const [toggle, setToggle] = useState(true);
   const item = location.state;
-
   const color = "black";
   return (
     <div className="wrapper">

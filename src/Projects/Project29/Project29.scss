@@ -6,6 +6,7 @@
   button {
     cursor: pointer;
   }
+
   &__navbar {
     max-width: 1200px;
     position: relative;
@@ -142,6 +143,7 @@
           display: block;
         }
       }
+
       .features-btn1 {
         position: absolute;
         display: none;
@@ -279,4 +281,7 @@
   width: 100%;
   background-color: #f1f5f8;
   height: 150px;
+}
+.fa-search {
+  color: white !important;
 }

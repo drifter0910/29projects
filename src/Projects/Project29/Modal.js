@@ -1,20 +1,28 @@
-import React, { useContext, useMemo } from "react";
+import React, { useContext, useEffect } from "react";
 import CartContext from "../../context/CartContext";
-
-const Modal = ({ toggle, setToggle }) => {
+const Modal = ({ setToggle }) => {
   const { descQty, incQty, cart, removeFromCart } = useContext(CartContext);
-
+  useEffect(() => {
+    const modal = document.querySelector(".project29__cart-modal-wrapper");
+    const modalCart = document.querySelector(".project29__cart-modal");
+    modal.addEventListener("click", () => {
+      setToggle(true);
+    });
+    modalCart.addEventListener("click", (e) => {
+      e.stopPropagation();
+    });
+    console.log(modal);
+  }, []);
   const total = cart
     .map((item) => item.fields.price * item.qty)
     .reduce((previousValue, currentValue) => previousValue + currentValue, 0);
-  console.log(total);
   return (
     <div className="project29__cart-modal">
       <div>
         <i onClick={() => setToggle(true)} className="fas fa-times"></i>
         <div className="yourbag">Your bag</div>
         <div style={{ padding: "1rem" }}>
-          {cart?.map((item, index) => {
+          {cart?.map((item) => {
             return (
               <div className="project29__cart-item" key={item.id}>
                 <div style={{ display: "flex", flexDirection: "row" }}>
@@ -57,5 +65,4 @@ const Modal = ({ toggle, setToggle }) => {
     </div>
   );
 };
-
 export default Modal;
