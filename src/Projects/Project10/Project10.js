@@ -1,16 +1,12 @@
 import React, { useEffect, useState } from "react";
 import "./Project10.scss";
-// import { Link } from "react-router-dom";
 import { Link } from "react-scroll";
 const Project10 = () => {
   const [toggle, setToggle] = useState(false);
   useEffect(() => {
     const fixedNav = document.querySelector("#nav");
     const onscroll = (window.onscroll = () => {
-      if (
-        document.body.scrollTop > 80 ||
-        document.documentElement.scrollTop > 80
-      ) {
+      if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
         fixedNav.classList.add("scrolled");
       } else {
         fixedNav.classList.remove("scrolled");
@@ -24,16 +20,10 @@ const Project10 = () => {
     <div className="project10">
       <div id="header" className="project10__header">
         <nav id="nav" className="">
-          <div
-            className={
-              toggle ? "project10__navbar show " : "project10__navbar "
-            }
-          >
+          <div className={toggle ? "project10__navbar show " : "project10__navbar "}>
             <div className="project10__navbar-left">
               <img
-                src={
-                  "https://vannilla-js-basic-project-10-scroll.netlify.app/logo.svg"
-                }
+                src={"https://vannilla-js-basic-project-10-scroll.netlify.app/logo.svg"}
                 alt=""
               />
             </div>
@@ -60,9 +50,8 @@ const Project10 = () => {
           <div className="project10__hero-content">
             <h1>scroll project</h1>
             <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas eos
-              neque sunt in? Id, necessitatibus quos quisquam distinctio
-              laudantium fugiat?
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas eos neque sunt in? Id,
+              necessitatibus quos quisquam distinctio laudantium fugiat?
             </p>
             <button>explore tours</button>
           </div>
@@ -84,9 +73,7 @@ const Project10 = () => {
         </p>
       </div>
       <div className="project10__footer">
-        <p>
-          Copyright © Backroads Travel Tours Company 2022. All Rights Reserved
-        </p>
+        <p>Copyright © Backroads Travel Tours Company 2022. All Rights Reserved</p>
       </div>
     </div>
   );

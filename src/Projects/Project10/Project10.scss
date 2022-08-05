@@ -12,7 +12,6 @@
     }
   }
 }
-
 .project10 {
   height: 100vh;
   h2 {
@@ -81,8 +80,8 @@
     position: relative;
     text-align: center;
     background: linear-gradient(rgba(63, 208, 212, 0.5), rgba(0, 0, 0, 0.7)),
-      url("https://vannilla-js-basic-project-10-scroll.netlify.app/hero-bcg.jpeg")
-        center/cover no-repeat;
+      url("https://vannilla-js-basic-project-10-scroll.netlify.app/hero-bcg.jpeg") center/cover
+        no-repeat;
   }
   &__hero {
     display: flex;

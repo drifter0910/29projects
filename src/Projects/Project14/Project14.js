@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import "./Project14.scss";
 import Project14List from "./Project14List";
+import "./Project14.scss";
 const Project14 = () => {
   const getData = JSON.parse(localStorage.getItem("state"));
   const [initState, setInitState] = useState(getData ? getData : []);
@@ -17,10 +17,7 @@ const Project14 = () => {
         id: Math.floor(Math.random() * 10000),
         data: input,
       };
-      setInitState((prevState) => {
-        const newState = [...prevState, props];
-        return newState;
-      });
+      setInitState([...initState, props]);
       appendNoti("add");
     }
     setInput("");
@@ -42,31 +39,24 @@ const Project14 = () => {
     setInitState([...editedTodo]);
     setToggle(false);
   };
+  const handleSubmitForm = (e) => {
+    e.preventDefault();
+  };
   const handleClear = () => {
     setInitState([]);
     appendNoti("remove");
     setToggle(false);
   };
   const appendNoti = (status) => {
-    const message__container = document.querySelector(".message__container");
+    const container = document.querySelector(".message__container");
     if (status === "add") {
-      message__container.innerHTML = `<p class="add">Add success</p>`;
+      container.innerHTML = `<p class="add">Add success</p>`;
     } else if (status === "remove") {
-      message__container.innerHTML = `<p class="remove">Remove success</p>`;
+      container.innerHTML = `<p class="remove">Remove success</p>`;
     }
     setTimeout(() => {
-      message__container.removeChild(message__container.firstElementChild);
+      container.removeChild(container.firstElementChild);
     }, 1000);
-  };
-  const handleSubmitEnter = (event) => {
-    if (event.key === "Enter") {
-      handleSubmit();
-    }
-  };
-  const handleEditEnter = (event) => {
-    if (event.key === "Enter") {
-      handleEdit();
-    }
   };
   const handeClickEdit = (item) => {
     setEditInput(item);
@@ -78,21 +68,22 @@ const Project14 = () => {
       <div className="project14__container">
         <div className="message__container"></div>
         <h1>Grocery Bud</h1>
-        <input
-          onChange={(e) => setInput(e.target.value)}
-          type="text"
-          value={input}
-          placeholder="e.g. eggs"
-          onKeyPress={handleSubmitEnter}
-        />
-        <button onClick={handleSubmit}>Submit</button>
+        <form action="" onSubmit={handleSubmitForm}>
+          <input
+            onChange={(e) => setInput(e.target.value)}
+            type="text"
+            value={input}
+            placeholder="e.g. eggs"
+          />
+          <button onClick={handleSubmit}>Submit</button>
+        </form>
+
         {toggle ? (
           <div className="edit-container active">
             <input
               onChange={(e) => setEditInput(e.target.value)}
               type="text"
               value={editInput?.data}
-              onKeyPress={handleEditEnter}
             />
             <button onClick={handleEdit}>Edit</button>
           </div>

@@ -25,11 +25,8 @@ const About = () => {
           amet. Ex, voluptate accusamus nesciunt totam vitae esse iste.
         </p>
       </div>
-      <div
-        className={toggle ? "project29__cart-modal-wrapper" : "project29__cart-modal-wrapper show"}
-      >
-        <Modal setToggle={setToggle} toggle={toggle} />
-      </div>
+
+      <Modal setToggle={setToggle} toggle={toggle} />
     </div>
   );
 };

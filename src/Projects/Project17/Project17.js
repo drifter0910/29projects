@@ -125,11 +125,7 @@ const Project17 = () => {
             modalArray.map((item) => (
               // add ' open ' to opacity 1 (def =0.5)
               <div key={item.id} className="modal-img">
-                <img
-                  onClick={() => handleMiniClick(item.id)}
-                  src={item.img}
-                  alt=""
-                />
+                <img onClick={() => handleMiniClick(item.id)} src={item.img} alt="" />
               </div>
             ))}
         </div>

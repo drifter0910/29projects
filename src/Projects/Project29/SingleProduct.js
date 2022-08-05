@@ -10,6 +10,10 @@ const SingleProduct = () => {
   const [toggle, setToggle] = useState(true);
   const item = location.state;
   const color = "black";
+  const handleCart = (item) => {
+    addToCart(item);
+    setToggle(false);
+  };
   return (
     <div className="wrapper">
       <Navbar setToggle={setToggle} toggle={toggle} color={color} />
@@ -28,16 +32,10 @@ const SingleProduct = () => {
             <h2>{item.fields.company}</h2>
             <p>${item.fields.price}</p>
             <p>{item.fields.desc}</p>
-            <button onClick={() => addToCart(item)}>Add To Cart</button>
+            <button onClick={() => handleCart(item)}>Add To Cart</button>
           </Col>
         </Row>
-        <div
-          className={
-            toggle ? "project29__cart-modal-wrapper" : "project29__cart-modal-wrapper show"
-          }
-        >
-          <Modal setToggle={setToggle} toggle={toggle} />
-        </div>
+        <Modal setToggle={setToggle} toggle={toggle} />
       </div>
     </div>
   );

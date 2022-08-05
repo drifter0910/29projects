@@ -62,11 +62,7 @@ const Project29 = () => {
         </Row>
         <button onClick={() => navigate("allproduct")}>ALL PRODUCTS</button>
       </div>
-      <div
-        className={toggle ? "project29__cart-modal-wrapper" : "project29__cart-modal-wrapper show"}
-      >
-        <Modal setToggle={setToggle} toggle={toggle} />
-      </div>
+      <Modal setToggle={setToggle} toggle={toggle} />
     </div>
   );
 };
