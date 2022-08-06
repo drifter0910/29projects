@@ -7,20 +7,23 @@ import CartState from "./context/CartState";
 import AllProduct from "./Projects/Project29/AllProduct";
 import SingleProduct from "./Projects/Project29/SingleProduct";
 import About from "./Projects/Project29/About";
+import ScrollToTop from "./ScrollToTop";
 function App() {
   return (
     <div className="App">
-      <CartState>
-        <Routes>
-          {route.map((route, index) => (
-            <Route key={index} path={route.path} element={route.element} />
-          ))}
-          <Route path="/project29" element={<Project29 />} />
-          <Route path="/project29/allproduct" element={<AllProduct />} />
-          <Route path="/project29/about" element={<About />} />
-          <Route path="/project29/:id" element={<SingleProduct />} />
-        </Routes>
-      </CartState>
+      <ScrollToTop>
+        <CartState>
+          <Routes>
+            {route.map((route, index) => (
+              <Route key={index} path={route.path} element={route.element} />
+            ))}
+            <Route path="/project29" element={<Project29 />} />
+            <Route path="/project29/allproduct" element={<AllProduct />} />
+            <Route path="/project29/about" element={<About />} />
+            <Route path="/project29/:id" element={<SingleProduct />} />
+          </Routes>
+        </CartState>
+      </ScrollToTop>
     </div>
   );
 }

@@ -6,11 +6,13 @@ import Navbar from "./Navbar";
 import Modal from "./Modal";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import useTitle from "../../hooks/useTitle";
 const AllProduct = () => {
   const { products, addToCart, fetchProducts } = useContext(CartContext);
   const [filterData, setFilterData] = useState(products);
   const [toggle, setToggle] = useState(true);
   const [input, setInput] = useState("");
+  useTitle("All Product");
   useEffect(() => {
     fetchData();
   }, []);

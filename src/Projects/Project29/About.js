@@ -1,10 +1,12 @@
 import React, { useState } from "react";
+import useTitle from "../../hooks/useTitle";
 import Modal from "./Modal";
 import Navbar from "./Navbar";
 import "./Project29.scss";
 const About = () => {
   const [toggle, setToggle] = useState(true);
   const color = "black";
+  useTitle("About");
   return (
     <div style={{ background: "white" }} className="project29">
       <Navbar color={color} setToggle={setToggle} toggle={toggle} />

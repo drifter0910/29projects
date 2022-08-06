@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import CartContext from "../../context/CartContext";
 const Modal = ({ setToggle, toggle }) => {
   const { descQty, incQty, cart, removeFromCart } = useContext(CartContext);

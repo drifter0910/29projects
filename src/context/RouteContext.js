@@ -29,7 +29,6 @@ import Project28 from "../Projects/Project28/Project28";
 import Project26 from "../Projects/Project26/Project26";
 import Project25 from "../Projects/Project25/Project25";
 import Project27 from "../Projects/Project27/Project27";
-import Project29 from "../Projects/Project29/Project29";
 
 export const route = [
   {
