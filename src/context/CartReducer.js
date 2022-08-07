@@ -4,9 +4,7 @@ const CartReducer = (state, action) => {
       //Check the items data from the products array
       const item = state.products.find((prod) => prod.id === action.payload.id);
       //Check if item is in cart already
-      const inCart = state.cart.find((item) =>
-        item.id === action.payload.id ? true : false
-      );
+      const inCart = state.cart.find((item) => (item.id === action.payload.id ? true : false));
       return {
         ...state,
         cart: inCart
@@ -44,9 +42,7 @@ const CartReducer = (state, action) => {
       };
     }
     case "DESC_QTY": {
-      const zeroQty = state.cart.find((item) =>
-        item.qty === 1 ? true : false
-      );
+      const zeroQty = state.cart.find((item) => (item.qty === 1 ? true : false));
       console.log(zeroQty);
       return {
         ...state,
@@ -55,9 +51,7 @@ const CartReducer = (state, action) => {
               return item.id !== action.payload;
             })
           : state.cart.map((item) =>
-              item.id === action.payload
-                ? { ...item, qty: (item.qty -= 1) }
-                : item
+              item.id === action.payload ? { ...item, qty: (item.qty -= 1) } : item
             ),
       };
     }

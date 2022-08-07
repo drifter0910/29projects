@@ -2,13 +2,17 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import "./Project24.scss";
 import { Row, Col } from "antd";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 const Project24 = () => {
   const [data, setData] = useState("");
   const [term, setTerm] = useState("");
-  const navigate = useNavigate();
   useEffect(() => {
-    fetchData(term);
+    const timeoutId = setTimeout(() => {
+      fetchData(term);
+    }, 500);
+    return () => {
+      clearTimeout(timeoutId);
+    };
   }, [term]);
   const fetchData = async (params) => {
     await axios
@@ -25,11 +29,7 @@ const Project24 = () => {
       <div className="container">
         <div className="project24__header">
           <h1>Cocktails API</h1>
-          <input
-            onChange={handleSearch}
-            type="text"
-            placeholder="Search Your Favorite Cocktails"
-          />
+          <input onChange={handleSearch} type="text" placeholder="Search Your Favorite Cocktails" />
         </div>
         <Row gutter={[50, 32]}>
           <div
@@ -40,22 +40,15 @@ const Project24 = () => {
               fontWeight: "bold",
             }}
           >
-            {data && data !== ""
-              ? undefined
-              : "Sorry,No Drinks Matched Your Search"}
+            {data && data ? undefined : "Sorry,No Drinks Matched Your Search"}
           </div>
           {data &&
             data.map((item, index) => (
-              <Col
-                onClick={() => navigate(`${item.idDrink}`)}
-                className="project24__item"
-                key={index}
-                lg={8}
-                md={12}
-                xs={24}
-              >
-                <h2>{item.strDrink}</h2>
-                <img src={item.strDrinkThumb} alt="" />
+              <Col className="project24__item" key={index} lg={8} md={12} xs={24}>
+                <Link to={`${item.idDrink}`} state={item}>
+                  <h2>{item.strDrink}</h2>
+                  <img src={item.strDrinkThumb} alt="" />
+                </Link>
               </Col>
             ))}
         </Row>

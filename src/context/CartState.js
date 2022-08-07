@@ -3,12 +3,12 @@ import CartContext from "./CartContext";
 import CartReducer from "./CartReducer";
 
 const CartState = ({ children }) => {
-  const initalState = {
+  const initialState = {
     products: [],
     cart: [],
   };
 
-  const [state, dispatch] = useReducer(CartReducer, initalState);
+  const [state, dispatch] = useReducer(CartReducer, initialState);
   const fetchProducts = (data) => {
     dispatch({ type: "FETCH_DATA", payload: data });
   };
