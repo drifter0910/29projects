@@ -1,5 +1,6 @@
 import Home from "../Projects/Home";
 import Project1 from "../Projects/Project1/Project1";
+import Project1Hex from "../Projects/Project1/Project1Hex";
 import Project10 from "../Projects/Project10/Project10";
 import Project11 from "../Projects/Project11/Project11";
 import Project12 from "../Projects/Project12/Project12";
@@ -38,6 +39,10 @@ export const route = [
   {
     path: "/project1",
     element: <Project1 />,
+  },
+  {
+    path: "/project1/hex",
+    element: <Project1Hex />,
   },
   {
     path: "/project2",

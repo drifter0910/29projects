@@ -9,14 +9,18 @@ const Project24 = () => {
   useEffect(() => {
     const timeoutId = setTimeout(() => {
       fetchData(term);
-    }, 500);
+    }, 1000);
     return () => {
       clearTimeout(timeoutId);
     };
   }, [term]);
-  const fetchData = async (params) => {
+  const fetchData = async () => {
     await axios
-      .get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${params}`)
+      .get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?`, {
+        params: {
+          s: term,
+        },
+      })
       .then((res) => {
         setData(res.data.drinks);
       });
